@@ -3,49 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitTrack</title>
+
+    <title>FitTrack Pro</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
+
+    <!-- ================= NAVBAR ================= -->
+
     <nav>
-        <div class="logo">FitTrack</div>
+
+        <div class="logo">
+            <i class="fa-solid fa-heart-pulse"></i>
+            FitTrack
+        </div>
+
         <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Nutrition</a></li>
-            <li><a href="#">BMI Calculator</a></li>
-            <li><a href="#">Calorie Calculator</a></li>
-            <li><a href="#">Contact</a></li>
+
+            <li><a href="#dashboard">Dashboard</a></li>
+
+            <li><a href="#bmi">BMI</a></li>
+
+            <li><a href="#nutrition">Nutrition</a></li>
+
+            <li><a href="#workout">Workout</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
         </ul>
+
     </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
     <header class="hero">
-        <h1>Transform Your Health</h1>
-        <p>Your personal fitness companion</p>
-        <p>Track your workouts, monitor your nutrition, and achieve your fitness goals with FitTrack.</p>
-        <a href="#dashboard">Get Started</a>
+
+        <div class="hero-content">
+
+            <h1>Transform Your Health Journey</h1>
+
+            <p>
+                Track calories, monitor workouts,
+                improve your habits, and achieve
+                your fitness goals.
+            </p>
+
+            <a href="#dashboard" class="btn">
+
+                Start Tracking
+
+            </a>
+
+        </div>
+
     </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
     <main>
+
+
+
+        <!-- DASHBOARD -->
+
         <section id="dashboard">
+
             <h2>Dashboard</h2>
+
             <div class="cards">
-             
+
+                <div class="card">
+
+                    <i class="fa-solid fa-fire"></i>
+
+                    <h3>Calories</h3>
+
+                    <p id="caloriesValue">0 kcal</p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <i class="fa-solid fa-weight-scale"></i>
+
+                    <h3>BMI</h3>
+
+                    <p id="bmiValue">0</p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <i class="fa-solid fa-glass-water"></i>
+
+                    <h3>Water</h3>
+
+                    <p id="waterValue">0 / 8</p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <h3>Health Score</h3>
+
+                    <p id="healthScore">0%</p>
+
+                </div>
+
             </div>
+
         </section>
-        <section id="bmi">Bmi Content</section>
-        <section id="nutrition">Nutrition Content</section>
-        <section id="workout">Workout Content</section>
-        <section id="contact">Contact Content</section>
-        <section id="water">Water Content</section>
-        <section id="health-score">Health Score Content</section>
-        
-        
-     </main>
-        
-        
-        
+
+
+
+        <!-- BMI -->
+
+        <section id="bmi">
+
+            <h2>BMI Calculator</h2>
+
+            <!-- inputs later -->
+
+        </section>
+
+
+
+        <!-- Calories -->
+
+        <section id="calories">
+
+            <h2>Calorie Calculator</h2>
+
+        </section>
+
+
+
+        <!-- Nutrition -->
+
+        <section id="nutrition">
+
+            <h2>Nutrition Search</h2>
+
+        </section>
+
+
+
+        <!-- Workout -->
+
+        <section id="workout">
+
+            <h2>Workout Finder</h2>
+
+        </section>
+
+
+
+        <!-- Water -->
+
+        <section id="water">
+
+            <h2>Water Tracker</h2>
+
+        </section>
+
+
+
+        <!-- Health Score -->
+
+        <section id="health-score">
+
+            <h2>Your Health Score</h2>
+
+        </section>
+
+
+
+        <!-- Contact -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
-        <p>&copy; 2024 FitTrack. All rights reserved.</p>
+
+        <p>Built with ❤️ using HTML, CSS & JavaScript</p>
+
+        <p>© 2026 FitTrack Pro</p>
+
     </footer>
 
-    
-    
+
+    <script src="js/app.js"></script>
+    <script src="js/bmi.js"></script>
+    <script src="js/calories.js"></script>
+    <script src="js/nutrition.js"></script>
+    <script src="js/workout.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/darkmode.js"></script>
+
 </body>
 </html>
