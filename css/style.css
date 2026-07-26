@@ -45,10 +45,49 @@ body.dark-mode{
     background-color: #0F172A;
 }
 
-body.dark-mode header,
-body.dark-mode .hero{
-    background-color: #0F172A;
+body.dark-mode nav{
+    background: rgba(15,23,42,.9);
+    border-bottom: 1px solid rgba(59,130,246,.15);
 }
+
+body.dark-mode .hero{
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+}
+body.dark-mode #dashboard,
+body.dark-mode #bmi,
+body.dark-mode .calc-form{
+    background: #1E293B;
+}
+
+body.dark-mode #healthForm input,
+body.dark-mode #healthForm select,
+body.dark-mode .bmi-form input{
+    background: #0F172A;
+    border-color: var(--border);
+}
+
+body.dark-mode .nutrition-card,
+body.dark-mode .search-bar,
+body.dark-mode #workout,
+body.dark-mode .report-card{
+    background: #1E293B;
+}
+
+body.dark-mode .workout-card__icon,
+body.dark-mode .workout-card__tag{
+    background: #0F172A;
+}
+body.dark-mode #water,
+body.dark-mode #contact{
+    background: #1E293B;
+}
+
+body.dark-mode #contactForm input,
+body.dark-mode #contactForm textarea{
+    background: #0F172A;
+    border-color: var(--border);
+}
+
 
 
 /* ==========================
