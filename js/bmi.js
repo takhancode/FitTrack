@@ -31,6 +31,11 @@ document.getElementById("bmiForm").addEventListener("submit", function (event) {
     document.getElementById("bmiResultValue").textContent = bmi.toFixed(2);
     document.getElementById("bmiResultLabel").textContent = category;
 
+     // Move the marker on the scale (BMI range 10–40 mapped to 0–100%)
+    let percent = ((bmi - 10) / 30) * 100;
+    percent = Math.max(0, Math.min(100, percent));  // keep within 0–100%
+    document.getElementById("bmiScaleMarker").style.left = percent + "%";
+
     // Dashboard card update
     document.getElementById("bmiValue").textContent = bmi.toFixed(2);
     saveToStorage("fittrack_bmi", { value: bmi.toFixed(2), category: category });
