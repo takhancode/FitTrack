@@ -28,9 +28,9 @@ document.getElementById("bmiForm").addEventListener("submit", function (event) {
     }
 
     // Show result
-    document.getElementById("bmiResultValue").textContent = bmi.toFixed(1);
+    document.getElementById("bmiResultValue").textContent = bmi.toFixed(2);
     document.getElementById("bmiResultLabel").textContent = category;
 
     // Dashboard card update
-    document.getElementById("bmiValue").textContent = bmi.toFixed(1);
+    document.getElementById("bmiValue").textContent = bmi.toFixed(2);
 });

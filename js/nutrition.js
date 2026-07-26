@@ -2,7 +2,7 @@ const nutritionForm = document.getElementById('nutritionForm');
 const nutritioninput = document.getElementById('nutritionInput');
 const nutritionResults = document.getElementById('nutritionResults');
 
-nutritionForm.addEventListener('submit', function (event) {
+nutritionForm.addEventListener('submit', async function (event) {
     event.preventDefault();
     const query = nutritioninput.value.trim();
 
@@ -16,8 +16,8 @@ nutritionForm.addEventListener('submit', function (event) {
     
     try {
         const url = "https://world.openfoodfacts.org/cgi/search.pl?search_terms=" +
-            encodeURIComponent(query) +
-            "&search_simple=1&action=process&json=1&page_size=6";
+        encodeURIComponent(query) +
+        "&search_simple=1&action=process&json=1&page_size=50&lc=en";
             
         const response = await fetch(url);
         const data = await response.json();
@@ -42,10 +42,18 @@ function displayResults(products) {
     }
 
      // Only keep products that actually have a name and calorie data
+    // Extra check: skip names with obvious non-English words
+    const frenchWords = ["pomme", "poire", "sans sucre", "allégée", "bio"];
     const validProducts = products.filter(function (p) {
-        return p.product_name && p.nutriments && p.nutriments["energy-kcal_100g"] !== undefined;
-    });
+    const nameCheck = p.product_name ? p.product_name.toLowerCase() : "";
+    const hasFrenchWord = frenchWords.some(word => nameCheck.includes(word));
 
+    return p.product_name &&
+           p.nutriments &&
+           p.nutriments["energy-kcal_100g"] !== undefined &&
+           p.lang === "en" &&
+           !hasFrenchWord;
+}).slice(0, 6);
     if (validProducts.length === 0) {
         nutritionResults.innerHTML = "<p class='nutrition-loading'>No detailed results found. Try a different food.</p>";
         return;
