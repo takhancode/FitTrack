@@ -352,20 +352,25 @@ body.dark-mode .hero{
     padding: 20px 22px 20px 60px;
     min-width: 150px;
 
+    background: transparent;
+    border-radius: 18px;
+    transition: .35s;
+}
+
+/* Glass blur background moved to its own layer, BEHIND the text.
+   This is what fixes the ghosting: the blur no longer shares a
+   compositing layer with the gradient-text number. */
+.stat-box::before{
+    content: "";
+    position: absolute;
+    inset: 0;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     border-radius: 18px;
-
     box-shadow: 0 15px 35px rgba(0,0,0,.08);
-    transition: .35s;
-
-    /* fixes the ghosting/double-number bug on mobile Chrome */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    will-change: transform;
-    isolation: isolate;
+    z-index: -1;
 }
 
 .stat-box:hover{
@@ -388,17 +393,13 @@ body.dark-mode .hero{
 }
 
 .stat-box h3{
+    position: relative;
     background: linear-gradient(135deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2rem;
     margin-bottom: 6px;
-
-    /* fixes the ghosting/double-number bug on mobile Chrome */
-    overflow: hidden;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 .stat-box p{
