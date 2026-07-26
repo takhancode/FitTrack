@@ -360,6 +360,12 @@ body.dark-mode .hero{
 
     box-shadow: 0 15px 35px rgba(0,0,0,.08);
     transition: .35s;
+
+    /* fixes the ghosting/double-number bug on mobile Chrome */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+    isolation: isolate;
 }
 
 .stat-box:hover{
@@ -388,6 +394,11 @@ body.dark-mode .hero{
     -webkit-text-fill-color: transparent;
     font-size: 2rem;
     margin-bottom: 6px;
+
+    /* fixes the ghosting/double-number bug on mobile Chrome */
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 .stat-box p{
@@ -424,8 +435,8 @@ body.dark-mode .hero{
     50%      { transform: translateY(-14px); }
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 1024px){
+---- Responsive ----
+/* @media (max-width: 1024px){
     .hero{
         flex-direction: column;
         text-align: center;
@@ -463,7 +474,7 @@ body.dark-mode .hero{
         width: 260px;
         height: 300px;
     }
-}
+} */
 
 
 
