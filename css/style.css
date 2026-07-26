@@ -834,3 +834,323 @@ body.dark-mode #bmi{
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* ==========================
+    CALORIE CALCULATOR
+========================== */
+#calories{
+    padding: 80px 8%;
+    background: linear-gradient(160deg, #FAF5FF 0%, #F0FDF9 100%);
+    transition: background .4s ease;
+}
+
+body.dark-mode #calories{
+    background: linear-gradient(160deg, #111827 0%, #0B1220 100%);
+}
+
+#calories::before{
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(139,92,246,.08);
+    filter: blur(10px);
+    top: -140px;
+    left: -120px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#calories h2,
+.calc-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+.calc-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.calc-form{
+    max-width: 900px;
+    margin: 0 auto 50px;
+    padding: 40px;
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.calc-form input,
+.calc-form select{
+    padding: 14px 16px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--text);
+    width: 100%;
+    transition: .3s;
+}
+
+.calc-form input:focus,
+.calc-form select:focus{
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(16,185,129,.15);
+}
+
+.calc-form label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--text);
+}
+
+.calc-form button{
+    grid-column: 1 / -1;
+    padding: 15px 34px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(16,185,129,.25);
+    transition: transform .3s, box-shadow .3s;
+}
+
+.calc-form button:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(16,185,129,.3);
+}
+
+.calc-results{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.calc-result-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: .3s;
+}
+
+.calc-result-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(16,185,129,.15);
+}
+
+.calc-result-card i{
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.calc-result-card--highlight{
+    background: linear-gradient(135deg, rgba(16,185,129,.15), rgba(139,92,246,.15));
+    border-color: rgba(16,185,129,.3);
+}
+
+.calc-result-card__label{
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--light-text);
+    margin-bottom: 8px;
+}
+
+.calc-result-card__value{
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+}
+
+.calc-result-card__desc{
+    font-size: .85rem;
+    color: var(--light-text);
+}
+
+@media (max-width: 768px){
+    .calc-form{
+        grid-template-columns: 1fr;
+    }
+    .calc-results{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ==========================
+    NUTRITION SEARCH
+========================== */
+#nutrition{
+    padding: 80px 8%;
+    background: linear-gradient(160deg, #F0FDF9 0%, #F8FAFC 100%);
+    transition: background .4s ease;
+}
+
+body.dark-mode #nutrition{
+    background: linear-gradient(160deg, #0B1220 0%, #111827 100%);
+}
+
+#nutrition::before{
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(16,185,129,.08);
+    filter: blur(10px);
+    top: -130px;
+    right: -110px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#nutrition h2,
+.search-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+.search-wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 2px solid var(--glass-border);
+    border-radius: 999px;
+    padding: 8px 8px 8px 24px;
+    margin-bottom: 40px;
+    transition: .3s;
+}
+
+.search-bar:focus-within{
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(16,185,129,.12);
+}
+
+.search-bar i{
+    color: var(--light-text);
+}
+
+.search-bar input{
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding: 10px 0;
+    color: var(--text);
+}
+
+.search-bar button{
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-bar button:hover{
+    transform: translateY(-2px);
+}
+
+.nutrition-results{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.nutrition-card{
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 26px;
+    text-align: left;
+    transition: .3s;
+}
+
+.nutrition-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.nutrition-card h3{
+    font-size: 1.15rem;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+
+.nutrition-card__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.nutrition-card__grid div{
+    font-size: .85rem;
+    color: var(--light-text);
+}
+
+.nutrition-card__grid span{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px){
+    .search-bar{
+        flex-wrap: wrap;
+        border-radius: 20px;
+        padding: 16px;
+    }
+    .search-bar button{
+        width: 100%;
+    }
+}
