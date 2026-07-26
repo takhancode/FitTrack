@@ -5,7 +5,7 @@ const waterCountDisplay = document.getElementById("waterCount");
 const waterProgressBar = document.getElementById("waterProgressBar");
 const waterReset = document.getElementById("waterReset");
 
-let waterCount = 0;
+let waterCount = getFromStorage("fittrack_water") || 0;
 const totalGlasses = 8;
 
 function updateWaterDisplay() {
@@ -27,6 +27,9 @@ function updateWaterDisplay() {
 
     // Update Dashboard card
     document.getElementById("waterValue").textContent = waterCount + " / " + totalGlasses;
+    // Save to LocalStorage
+    saveToStorage("fittrack_water", waterCount);
+
 }
 
 // Click a glass — fills up to that glass (like a real progress tracker)

@@ -33,4 +33,5 @@ document.getElementById("bmiForm").addEventListener("submit", function (event) {
 
     // Dashboard card update
     document.getElementById("bmiValue").textContent = bmi.toFixed(2);
+    saveToStorage("fittrack_bmi", { value: bmi.toFixed(2), category: category });
 });

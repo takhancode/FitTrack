@@ -71,4 +71,5 @@ calorieForm.addEventListener("submit", function (event) {
     // Dashboard Calories Card
     document.getElementById("caloriesValue").textContent =
         Math.round(targetCalories) + " kcal";
+    saveToStorage("fittrack_calories", Math.round(targetCalories));
 });
