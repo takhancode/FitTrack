@@ -26,6 +26,28 @@ ul{
     --primary: #2563EB;
     --text: #0F172A;
     --light-text: #64748B;
+    --white: #FFFFFF;
+    --border: #E2E8F0;
+    --shadow: 0 10px 25px rgba(0,0,0,.08);
+    --radius: 18px;
+}
+
+body.dark-mode{
+    --primary: #3B82F6;
+    --text: #F1F5F9;
+    --light-text: #94A3B8;
+    --white: #1E293B;
+    --border: #334155;
+    --shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+
+body.dark-mode{
+    background-color: #0F172A;
+}
+
+body.dark-mode header,
+body.dark-mode .hero{
+    background-color: #0F172A;
 }
 
 
@@ -164,18 +186,6 @@ nav ul li a:hover::after{
 }
 
 
-
-
-
-/* ==========================
-   Add these to your :root if not already there
-========================== */
-:root{
-    --white: #FFFFFF;
-    --border: #E2E8F0;
-    --shadow: 0 10px 25px rgba(0,0,0,.08);
-    --radius: 18px;
-}
 
 
 /* ==========================
