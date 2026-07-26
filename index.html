@@ -22,55 +22,95 @@
 <body>
 
     <!-- ================= NAVBAR ================= -->
-
+ <header id="home" class="home">
     <nav>
 
-        <div class="logo">
-            <i class="fa-solid fa-heart-pulse"></i>
-            FitTrack
-        </div>
+ <a href="#home" class="logo">
+ <i class="fa-solid fa-heart-pulse"></i>
+ FitTrack Pro
+</a>
 
-        <ul>
+    <input type="checkbox" id="navToggle" class="nav-toggle">
 
-            <li><a href="#dashboard">Dashboard</a></li>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#bmi">BMI</a></li>
+        <li><a href="#nutrition">Nutrition</a></li>
+        <li><a href="#workout">Workout</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-            <li><a href="#bmi">BMI</a></li>
+    <div class="nav-actions">
 
-            <li><a href="#nutrition">Nutrition</a></li>
+        <button id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
 
-            <li><a href="#workout">Workout</a></li>
+        <label for="navToggle" class="nav-burger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </label>
 
-            <li><a href="#contact">Contact</a></li>
+    </div>
 
-        </ul>
-
-    </nav>
+</nav>
 
 
 
     <!-- ================= HERO ================= -->
 
-    <header class="hero">
+    <section class="hero">
 
-        <div class="hero-content">
+     <div class="hero-content">
 
-            <h1>Transform Your Health Journey</h1>
+    <div class="hero-eyebrow">
+        <span class="hero-eyebrow__dot"></span>
+        Trusted by 10,000+ people across Pakistan
+    </div>
 
-            <p>
-                Track calories, monitor workouts,
-                improve your habits, and achieve
-                your fitness goals.
-            </p>
+    <h1>Transform Your <span class="text-gradient">Health Journey</span></h1>
 
-            <a href="#dashboard" class="btn">
+    <p>
+        Track calories, monitor workouts,
+        improve your habits, and achieve
+        your fitness goals.
+    </p>
 
-                Start Tracking
+    <a href="#dashboard" class="btn">
+        Start Tracking
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
 
-            </a>
+    <div class="hero-stats">
+        <div class="stat-box">
+            <i class="fa-solid fa-users"></i>
+            <h3>10K+</h3>
+            <p>Active Users</p>
+        </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-dumbbell"></i>
+            <h3>500+</h3>
+            <p>Workout Plans</p>
+        </div>
+        <div class="stat-box">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>95%</h3>
+            <p>Success Rate</p>
+        </div>
+    </div>
 
+</div>
+
+        <div class="hero-image">
+          <img src="assets/gym-person.png" alt="Fitness Person">
+          <div class="hero-badge">
+          <i class="fa-solid fa-heart"></i> Healthy
+          </div>
         </div>
 
+    </section>
     </header>
+  
 
 
 
@@ -86,7 +126,54 @@
 
             <h2>Dashboard</h2>
 
-            <div class="cards">
+            <form id="healthForm">
+
+            <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" required placeholder="Enter your age">
+            </div>
+            <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required >
+                <option  value="">Select Gender</option>
+                <option  value="male">Male</option>
+                <option  value="female">Female</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" required placeholder="Enter your height">
+            </div>
+            <div class="form-group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" required placeholder="Enter your weight">
+            </div>
+            <div class="form-group">
+            <label for="activityLevel">Activity Level</label>
+            <select id="activityLevel" name="activityLevel" required >
+                <option  value="">Select Activity Level</option>
+                <option  value="sedentary">Sedentary (little or no exercise)</option>
+                <option  value="lightlyActive">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                <option  value="moderatelyActive">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                <option  value="veryActive">Very Active (hard exercise/sports 6-7 days a week)</option>
+                <option  value="extraActive">Extra Active (very hard exercise/sports & physical job)</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="goal">Select Goal:</label>
+            <select id="goal" name="goal" required >
+                <option  value="">Select Goal</option>
+                <option value="loseWeight">Lose Weight</option>
+                <option value="maintainWeight">Maintain Weight</option>
+                <option value="gainWeight">Gain Weight</option>
+            </select>
+            </div>
+            <button type="submit" id="analyzeBtn">Analyze My Health</button>
+
+            </form>
+
+            <div class="cards" id="dashboardCards">
 
                 <div class="card">
 
@@ -95,6 +182,9 @@
                     <h3>Calories</h3>
 
                     <p id="caloriesValue">0 kcal</p>
+
+                    <p class="card-desc">Today's Goal</p>
+
 
                 </div>
 
@@ -107,6 +197,7 @@
                     <h3>BMI</h3>
 
                     <p id="bmiValue">0</p>
+                    <p class="card-desc">Healthy Range</p>
 
                 </div>
 
@@ -119,6 +210,7 @@
                     <h3>Water</h3>
 
                     <p id="waterValue">0 / 8</p>
+                    <p class="card-desc">Daily Intake</p>
 
                 </div>
 
@@ -131,7 +223,7 @@
                     <h3>Health Score</h3>
 
                     <p id="healthScore">0%</p>
-
+                    <p class="card-desc">Overall Health</p>
                 </div>
 
             </div>
@@ -142,61 +234,304 @@
 
         <!-- BMI -->
 
-        <section id="bmi">
+        
+    <section id="bmi">
 
-            <h2>BMI Calculator</h2>
+    <h2>BMI Calculator</h2>
 
-            <!-- inputs later -->
+    <div class="bmi-wrapper">
 
-        </section>
+        <form id="bmiForm" class="bmi-form">
+
+            <div class="form-group">
+                <label for="bmiHeight">Height (cm)</label>
+                <input type="number" id="bmiHeight" name="bmiHeight" required placeholder="e.g. 170">
+            </div>
+
+            <div class="form-group">
+                <label for="bmiWeight">Weight (kg)</label>
+                <input type="number" id="bmiWeight" name="bmiWeight" required placeholder="e.g. 65">
+            </div>
+
+            <button type="submit">Calculate BMI</button>
+
+        </form>
+
+        <div class="bmi-result" id="bmiResult">
+
+            <div class="bmi-result__value" id="bmiResultValue">--</div>
+            <div class="bmi-result__label" id="bmiResultLabel">Enter your details</div>
+
+            <div class="bmi-scale">
+                <div class="bmi-scale__marker" id="bmiScaleMarker"></div>
+            </div>
+
+            <div class="bmi-scale__labels">
+                <span>Underweight</span>
+                <span>Normal</span>
+                <span>Overweight</span>
+                <span>Obese</span>
+            </div>
+
+        </div>
+
+       </div>
+
+    </section>
 
 
+
+        
 
         <!-- Calories -->
 
-        <section id="calories">
+    <section id="calories">
 
-            <h2>Calorie Calculator</h2>
+    <h2>Calorie Calculator</h2>
 
-        </section>
+    <div class="calc-wrapper">
+
+        <form id="calorieForm" class="calc-form">
+
+            <div class="form-group">
+                <label for="calAge">Age</label>
+                <input type="number" id="calAge" placeholder="e.g. 22">
+            </div>
+
+            <div class="form-group">
+                <label for="calGender">Gender</label>
+                <select id="calGender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="calHeight">Height (cm)</label>
+                <input type="number" id="calHeight" placeholder="e.g. 170">
+            </div>
+
+            <div class="form-group">
+                <label for="calWeight">Weight (kg)</label>
+                <input type="number" id="calWeight" placeholder="e.g. 65">
+            </div>
+
+            <div class="form-group form-group--full">
+                <label for="calActivity">Activity Level</label>
+                <select id="calActivity">
+                    <option value="">Select Activity Level</option>
+                    <option value="sedentary">Sedentary</option>
+                    <option value="light">Lightly Active</option>
+                    <option value="moderate">Moderately Active</option>
+                    <option value="active">Very Active</option>
+                    <option value="extra">Extra Active</option>
+                </select>
+            </div>
+
+            <button type="submit" class="form-group--full">Calculate Calories</button>
+
+        </form>
+
+        <div class="calc-results">
+
+            <div class="calc-result-card">
+                <i class="fa-solid fa-fire"></i>
+                <p class="calc-result-card__label">BMR</p>
+                <p class="calc-result-card__value" id="bmrValue">--</p>
+                <p class="calc-result-card__desc">Calories at rest</p>
+            </div>
+
+            <div class="calc-result-card calc-result-card--highlight">
+                <i class="fa-solid fa-bolt"></i>
+                <p class="calc-result-card__label">TDEE</p>
+                <p class="calc-result-card__value" id="tdeeValue">--</p>
+                <p class="calc-result-card__desc">Total daily burn</p>
+            </div>
+
+            <div class="calc-result-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <p class="calc-result-card__label">Target</p>
+                <p class="calc-result-card__value" id="targetValue">--</p>
+                <p class="calc-result-card__desc">Based on your goal</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
 
 
 
-        <!-- Nutrition -->
+       
 
-        <section id="nutrition">
+       <!-- Nutrition -->
 
-            <h2>Nutrition Search</h2>
+    <section id="nutrition">
 
-        </section>
+    <h2>Nutrition Search</h2>
 
+    <div class="search-wrapper">
+
+        <form class="search-bar" id="nutritionForm">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search a food, e.g. banana, chicken breast..." id="nutritionInput">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="nutrition-results" id="nutritionResults">
+
+            <div class="nutrition-card">
+                <h3>Banana</h3>
+                <div class="nutrition-card__grid">
+                    <div><span>105</span>kcal</div>
+                    <div><span>1.3g</span>protein</div>
+                    <div><span>27g</span>carbs</div>
+                    <div><span>0.4g</span>fat</div>
+                </div>
+            </div>
+
+            <div class="nutrition-card">
+                <h3>Chicken Breast (100g)</h3>
+                <div class="nutrition-card__grid">
+                    <div><span>165</span>kcal</div>
+                    <div><span>31g</span>protein</div>
+                    <div><span>0g</span>carbs</div>
+                    <div><span>3.6g</span>fat</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
 
 
         <!-- Workout -->
+       
+        <!-- Workout -->
 
-        <section id="workout">
+    <section id="workout">
 
-            <h2>Workout Finder</h2>
+    <h2>Workout Finder</h2>
 
-        </section>
+    <div class="workout-wrapper">
+
+        <div class="workout-filters" id="workoutFilters">
+            <button class="filter-pill filter-pill--active" data-muscle="all">All</button>
+            <button class="filter-pill" data-muscle="chest">Chest</button>
+            <button class="filter-pill" data-muscle="back">Back</button>
+            <button class="filter-pill" data-muscle="legs">Legs</button>
+            <button class="filter-pill" data-muscle="arms">Arms</button>
+            <button class="filter-pill" data-muscle="core">Core</button>
+        </div>
+
+        <div class="workout-grid" id="workoutGrid">
+
+            <div class="workout-card">
+                <div class="workout-card__icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Push-ups</h3>
+                <p class="workout-card__tag">Chest</p>
+                <p class="workout-card__desc">3 sets of 12–15 reps, bodyweight only.</p>
+            </div>
+
+            <div class="workout-card">
+                <div class="workout-card__icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Pull-ups</h3>
+                <p class="workout-card__tag">Back</p>
+                <p class="workout-card__desc">3 sets to failure, use a resistance band if needed.</p>
+            </div>
+
+            <div class="workout-card">
+                <div class="workout-card__icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Squats</h3>
+                <p class="workout-card__tag">Legs</p>
+                <p class="workout-card__desc">4 sets of 10 reps, add weight as you progress.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
 
 
 
         <!-- Water -->
 
-        <section id="water">
+        <!-- Water -->
 
-            <h2>Water Tracker</h2>
+    <section id="water">
 
-        </section>
+    <h2>Water Tracker</h2>
+
+    <div class="water-wrapper">
+
+        <div class="water-progress">
+            <div class="water-progress__bar" id="waterProgressBar" style="width: 0%"></div>
+        </div>
+        <p class="water-progress__label"><span id="waterCount">0</span> / 8 glasses today</p>
+
+        <div class="water-glasses" id="waterGlasses">
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+            <button class="water-glass" type="button"><i class="fa-solid fa-glass-water"></i></button>
+        </div>
+
+        <button class="btn-reset" id="waterReset" type="button">Reset today</button>
+
+    </div>
+
+    </section>
 
 
 
         <!-- Health Score -->
 
-        <section id="health-score">
+        <section id="report">
 
-            <h2>Your Health Score</h2>
+            <h2>Health Report</h2>
+
+            <div class="report-cards" id="reportCards">
+
+        <div class="report-card">
+            <h3>BMI</h3>
+            <p id="reportBMI">--</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Calories</h3>
+            <p id="reportCalories">--</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Water</h3>
+            <p id="reportWater">--</p>
+        </div>
+
+         <div class="report-card">
+            <h3>Workout</h3>
+            <p id="reportWorkout">--</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Nutrition Tip</h3>
+            <p id="reportNutrition">--</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Health Score</h3>
+            <p id="reportScore">--</p>
+        </div>
+
+        </div>
 
         </section>
 
@@ -207,6 +542,24 @@
         <section id="contact">
 
             <h2>Contact</h2>
+
+            <form id="contactForm">
+                <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+                </div>
+
+                <button type="submit">Send</button>
+
+            </form>
 
         </section>
 
@@ -230,8 +583,10 @@
     <script src="js/app.js"></script>
     <script src="js/bmi.js"></script>
     <script src="js/calories.js"></script>
+    <script src="js/water.js"></script>
     <script src="js/nutrition.js"></script>
     <script src="js/workout.js"></script>
+    <script src="js/report.js"></script>
     <script src="js/storage.js"></script>
     <script src="js/darkmode.js"></script>
 
