@@ -22,10 +22,24 @@ function restoreDashboard() {
 
     if (savedBmi) {
         document.getElementById("bmiValue").textContent = savedBmi.value;
+
+        const bmiResultValue = document.getElementById("bmiResultValue");
+        const bmiResultLabel = document.getElementById("bmiResultLabel");
+        if (bmiResultValue) bmiResultValue.textContent = savedBmi.value;
+        if (bmiResultLabel) bmiResultLabel.textContent = savedBmi.category;
     }
 
     if (savedCalories) {
-        document.getElementById("caloriesValue").textContent = savedCalories + " kcal";
+        // Dashboard card
+        document.getElementById("caloriesValue").textContent = savedCalories.target + " kcal";
+
+        // Calorie Calculator's own result boxes
+        const bmrValue = document.getElementById("bmrValue");
+        const tdeeValue = document.getElementById("tdeeValue");
+        const targetValue = document.getElementById("targetValue");
+        if (bmrValue) bmrValue.textContent = savedCalories.bmr + " kcal";
+        if (tdeeValue) tdeeValue.textContent = savedCalories.tdee + " kcal";
+        if (targetValue) targetValue.textContent = savedCalories.target + " kcal";
     }
 
     if (savedWater !== null) {
