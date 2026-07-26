@@ -1,0 +1,177 @@
+/* ---- Responsive ---- */
+@media (max-width: 1024px){
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    .hero-content p{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-stats{
+        justify-content: center;
+    }
+    .hero-image img{
+        width: 320px;
+        height: 360px;
+    }
+    .hero::before,
+    .hero::after{
+        display: none;
+    }
+}
+
+@media (max-width: 480px){
+    .hero-content h1{
+        font-size: 2.4rem;
+    }
+    .hero-stats{
+        gap: 14px;
+    }
+    .stat-box{
+        min-width: 120px;
+        padding: 16px 18px;
+    }
+    .hero-image img{
+        width: 260px;
+        height: 300px;
+    }
+}
+
+
+
+/* ---- Global safety net: stop any horizontal scroll bugs ---- */
+html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+ 
+/* ============================================================
+   NAVBAR — desktop base rules first (only needed if you don't
+   already have these; safe to keep even if duplicated)
+============================================================ */
+.home > nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.logo{
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+ 
+@media (max-width: 900px){
+ 
+    .home > nav ul{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(75vw, 300px);
+        background: var(--white, #fff);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 26px;
+        padding: 40px;
+        transform: translateX(100%);
+        transition: transform .35s ease;
+        z-index: 999;
+        box-shadow: -10px 0 30px rgba(0,0,0,.15);
+    }
+ 
+    .nav-toggle:checked ~ ul{
+        transform: translateX(0);
+    }
+ 
+    .nav-burger{
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    .nav-burger span{
+        width: 24px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: transform .3s ease, opacity .3s ease;
+    }
+    .nav-toggle:checked ~ .nav-actions .nav-burger span:nth-child(1){
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle:checked ~ .nav-actions .nav-burger span:nth-child(2){
+        opacity: 0;
+    }
+    .nav-toggle:checked ~ .nav-actions .nav-burger span:nth-child(3){
+        transform: translateY(-7px) rotate(-45deg);
+    }
+ 
+    .logo{
+        font-size: 1.15rem;
+    }
+}
+ 
+/* ============================================================
+   DASHBOARD FORM — this fixes the cut-off Age/Height/Activity
+   fields you saw in the screenshot
+============================================================ */
+@media (max-width: 768px){
+    #healthForm{
+        grid-template-columns: 1fr;   /* was repeat(2, 1fr) */
+        padding: 28px 20px;
+    }
+    #healthForm button{
+        width: 100%;
+    }
+}
+ 
+/* ============================================================
+   ALL OTHER SECTION GRIDS — BMI / Calories / Nutrition /
+   Workout / Report / Contact
+   (adjust class names below if yours differ slightly)
+============================================================ */
+@media (max-width: 900px){
+    .bmi-wrapper,
+    .calc-wrapper form,
+    .workout-grid,
+    .nutrition-results,
+    .report-cards{
+        grid-template-columns: 1fr;
+    }
+}
+ 
+@media (max-width: 768px){
+    section{
+        padding-left: 6% !important;
+        padding-right: 6% !important;
+    }
+    #dashboard{
+        padding: 60px 6%;
+    }
+    form{
+        grid-template-columns: 1fr;
+    }
+    input, select, textarea{
+        width: 100%;
+    }
+}
+ 
+/* ============================================================
+   Stat numbers (10K+, 500+, 95%) — safety fix in case the
+   overlap you saw is a rendering glitch from the gradient-text
+   effect. If you have a JS counter/animation script for these
+   numbers, that script is the real cause — let me know and I'll
+   fix it directly.
+============================================================ */
+.stat-box h3{
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
