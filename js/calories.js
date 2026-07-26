@@ -9,22 +9,23 @@ calorieForm.addEventListener("submit", function (event) {
     const height = Number(document.getElementById("calHeight").value);
     const weight = Number(document.getElementById("calWeight").value);
     const activity = document.getElementById("calActivity").value;
+    const goal = document.getElementById("calGoal").value;
 
     // Validate input values
-
-    if (age <= 0 ||height <= 0 ||weight <= 0 || gender === "" ||activity === "") {
-    alert("Please enter valid values.");
-    return;
-}
+    if (age <= 0 || height <= 0 || weight <= 0 || gender === "" || activity === "" || goal === "") {
+        alert("Please enter valid values.");
+        return;
+    }
 
     // Calculate BMR
     let bmr;
     if (gender === "male") {
-        bmr = 10 * weight + 6.25 * height - 5 * age + 5 
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
     } else {
-        bmr = 10 * weight + 6.25 * height - 5 * age - 161
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     }
-    //calculate TDEE
+
+    // calculate TDEE
     let tdee;
     switch (activity) {
         case "sedentary":
@@ -39,25 +40,23 @@ calorieForm.addEventListener("submit", function (event) {
         case "active":
             tdee = bmr * 1.725;
             break;
-        case "veryActive":
+        case "extra":
             tdee = bmr * 1.9;
             break;
         default:
             tdee = bmr * 1.2;
     }
-    
+
     // Target Calories
     let targetCalories;
 
-    if (goal === "loseWeight") {
+    if (goal === "lose") {
         targetCalories = tdee - 500;
-    } else if (goal === "gainWeight") {
+    } else if (goal === "gain") {
         targetCalories = tdee + 500;
     } else {
         targetCalories = tdee;
     }
-
-    // display result
 
     // Display Results
     document.getElementById("bmrValue").textContent =
