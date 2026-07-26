@@ -1285,3 +1285,136 @@ body.dark-mode #workout{
     font-size: .9rem;
     color: var(--light-text);
 }
+
+
+/* ==========================
+    WATER TRACKER
+========================== */
+#water{
+    padding: 80px 8%;
+    background: linear-gradient(160deg, #FAF5FF 0%, #F0FDF9 100%);
+    transition: background .4s ease;
+}
+
+body.dark-mode #water{
+    background: linear-gradient(160deg, #0B1220 0%, #111827 100%);
+}
+
+#water::before{
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba(16,185,129,.08);
+    filter: blur(10px);
+    top: -100px;
+    left: -100px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+#water h2,
+.section-eyebrow,
+.water-wrapper{
+    position: relative;
+    z-index: 1;
+}
+
+/* Reusable eyebrow badge (used above section headings) */
+.section-eyebrow{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--light-text);
+}
+
+.section-eyebrow__dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 0 4px rgba(16,185,129,.18);
+}
+
+.water-wrapper{
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.water-progress{
+    height: 14px;
+    border-radius: 999px;
+    background: var(--border);
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.water-progress__bar{
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 999px;
+    transition: width .4s ease;
+}
+
+.water-progress__label{
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.water-glasses{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.water-glass{
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    border: 2px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--light-text);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.water-glass:hover{
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.water-glass.filled{
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-color: transparent;
+    color: white;
+}
+
+.btn-reset{
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: .9rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
