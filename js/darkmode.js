@@ -5,7 +5,12 @@ const body = document.body;
 
 // Load saved theme preference
 const savedTheme = getFromStorage("fittrack_theme");
-if (savedTheme === "dark") {
+
+if (savedTheme === "light") {
+    body.classList.remove("dark-mode");
+    themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+} else {
+    // default is dark mode (no saved preference, or saved as "dark")
     body.classList.add("dark-mode");
     themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
 }
