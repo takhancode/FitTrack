@@ -34,3 +34,22 @@ https://github.com/takhancode/FitTrack
 ## 👨‍💻 Developer
 
 Khan
+
+
+
+## 📸 Screenshots
+
+### 🏠 Hero Section
+![Hero](assets/screenshots/hero.png)
+
+### 📊 Dashboard
+![Dashboard](assets/screenshots/dashboard.png)
+
+### 🥗 Nutrition Search
+![Nutrition](assets/screenshots/nutrition.png)
+
+### 💪 Workout Finder
+![Workout](assets/screenshots/workout.png)
+
+### 💧 Water Tracker
+![Water Tracker](assets/screenshots/watertracker.png)
