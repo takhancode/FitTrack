@@ -191,7 +191,7 @@ nav ul li a:hover::after{
     justify-content: space-between;
     align-items: center;
     gap: 80px;
-    padding: 60px 8%;
+    padding: 40px 8%;
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, #F0FDF9 0%, #F5F3FF 50%, #ECFDF5 100%);
@@ -491,7 +491,7 @@ h2{
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--text);
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 h2::after{
@@ -517,7 +517,7 @@ section{
         DASHBOARD SECTION
 ========================== */
 #dashboard{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background:linear-gradient(160deg, #F8FAFC 0%, #F0FDF9 100%);
     transition: background .4s ease;
 }
@@ -691,7 +691,7 @@ body.dark-mode #dashboard{
         BMI SECTION
 ========================== */
 #bmi{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #F8FAFC 0%, #FAF5FF 100%);
     transition: background .4s ease;
 }
@@ -851,7 +851,7 @@ body.dark-mode #bmi{
     CALORIE CALCULATOR
 ========================== */
 #calories{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #FAF5FF 0%, #F0FDF9 100%);
     transition: background .4s ease;
 }
@@ -1021,7 +1021,7 @@ body.dark-mode #calories{
     NUTRITION SEARCH
 ========================== */
 #nutrition{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #F0FDF9 0%, #F8FAFC 100%);
     transition: background .4s ease;
 }
@@ -1171,7 +1171,7 @@ body.dark-mode #nutrition{
     WORKOUT FINDER
 ========================== */
 #workout{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #F8FAFC 0%, #FAF5FF 100%);
     transition: background .4s ease;
 }
@@ -1301,7 +1301,7 @@ body.dark-mode #workout{
     WATER TRACKER
 ========================== */
 #water{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #FAF5FF 0%, #F0FDF9 100%);
     transition: background .4s ease;
 }
@@ -1436,7 +1436,7 @@ body.dark-mode #water{
     HEALTH REPORT CARDS
 ========================== */
 #report{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #F0FDF9 0%, #FAF5FF 100%);
     transition: background .4s ease;
 }
@@ -1517,7 +1517,7 @@ body.dark-mode #report{
     CONTACT FORM
 ========================== */
 #contact{
-    padding: 60px 8%;
+    padding: 40px 8%;
     background: linear-gradient(160deg, #FAF5FF 0%, #F8FAFC 100%);
     transition: background .4s ease;
 }
