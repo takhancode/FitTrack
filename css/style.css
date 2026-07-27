@@ -518,7 +518,7 @@ section{
 ========================== */
 #dashboard{
     padding: 80px 8%;
-    background: linear-gradient(160deg, #F8FAFC 0%, #F0FDF9 100%);
+    background:linear-gradient(160deg, #F8FAFC 0%, #F0FDF9 100%);
     transition: background .4s ease;
 }
 
@@ -1650,4 +1650,16 @@ footer p:last-child{
     margin-bottom: 0;
     font-weight: 600;
     color: var(--text);
+}
+
+
+
+
+
+
+/* ==========================
+   FAILSAFE — force heading color
+========================== */
+h2{
+    color: var(--text) !important;
 }
